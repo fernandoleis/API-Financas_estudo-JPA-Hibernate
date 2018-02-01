@@ -5,7 +5,7 @@ import br.com.financas.util.JPAUtil;
 
 import javax.persistence.EntityManager;
 
-public class TesteConta {
+public class TesteInsereConta {
 
     public static void main(String[] args) {
         Conta conta = new Conta();
