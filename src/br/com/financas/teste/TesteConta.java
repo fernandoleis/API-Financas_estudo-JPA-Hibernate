@@ -21,5 +21,6 @@ public class TesteConta {
         entityManager.getTransaction().commit();
 
         entityManager.close();
+
     }
 }

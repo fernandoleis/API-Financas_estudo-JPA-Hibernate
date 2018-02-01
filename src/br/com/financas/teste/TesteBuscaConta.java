@@ -14,6 +14,20 @@ public class TesteBuscaConta {
         conta.setTitular("Fernando Leis");
         System.out.println("conta.getTitular() = " + conta.getTitular());
         em.getTransaction().commit();
+        em.close();
+
+        EntityManager em2 = new JPAUtil().getEntityManager();
+        em2.getTransaction().begin();
+
+//        conta.setTitular("Detached");
+//        em2.persist(conta);
+        conta.setTitular("Fernando M C Leis");
+        em2.merge(conta);
+
+        em2.getTransaction().commit();
+        em2.close();
+
+
     }
 
 }
