@@ -12,6 +12,7 @@ public class Cliente {
     private String profissao;
     private String endereco;
 
+    @JoinColumn(unique = true)
     @OneToOne
     private Conta conta;
 
