@@ -1,9 +1,7 @@
 package br.com.financas.modelo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Conta {
@@ -14,6 +12,17 @@ public class Conta {
     private String numero;
     private String banco;
     private String agencia;
+
+    @OneToMany(mappedBy = "conta")
+    private List<Movimentacao> movimentacoes;
+
+    public List<Movimentacao> getMovimentacoes() {
+        return movimentacoes;
+    }
+
+    public void setMovimentacoes(List<Movimentacao> movimentacoes) {
+        this.movimentacoes = movimentacoes;
+    }
 
     public Integer getId() {
         return id;
