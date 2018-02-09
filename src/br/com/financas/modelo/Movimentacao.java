@@ -6,6 +6,7 @@ import java.util.Calendar;
 import java.util.List;
 
 @Entity
+@NamedQuery(query = "select distinct avg(m.valor) from Movimentacao m where m.conta = :pConta and m.tipo = :pTipo group by m.data", name = "MediasPorDiaETipo")
 public class Movimentacao {
 
     @Id
